@@ -26,11 +26,13 @@ import {Sidebar} from './Sidebar.js';
 
 import {Dashboard} from './Dashboard.js';
 import {Blogs} from './Blogs.js';
+import {CreateBlog} from './CreateBlog.js';
 
 function App() {
   const routes = {
     '/': () => <Dashboard/>,
     '/blogs': () => <Blogs/>,
+    '/create-blogs': () => <CreateBlog/>,
   }
   const routeResult = useRoutes(routes);
   const handleRoute = (r) => { navigate(r); }
