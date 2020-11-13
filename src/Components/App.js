@@ -6,14 +6,36 @@ import {navigate, useRoutes} from 'hookrouter';
 import AppProvider from './AppProvider.js';
 import {AppContext} from './AppProvider.js';
 
-const StyledApp = styled.div``;
+import {Nav} from './Nav.js';
+import {Sidebar} from './Sidebar.js';
+
+const StyledApp = styled.div`
+color: #cccccc;
+	background: rgba(1,1,1,1);
+	width: 100vw;
+	height: 100vh;
+
+	#routed-component-container {
+		width: calc(100vw - 32rem);
+		height: calc(100vh - 5rem);
+		position: absolute;
+		top: 5rem;
+		left: 32rem;
+	}
+`;
 
 function App() {
   return (
     <AppProvider>
       <AppContext.Consumer>
         {({ }) => (
-          <StyledApp>Heloo world</StyledApp>
+          <StyledApp>
+            <Nav />
+            <div id="routed-component-container">
+
+            </div>
+            <Sidebar />
+          </StyledApp>
         )}
       </AppContext.Consumer>
     </AppProvider>
