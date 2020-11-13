@@ -6,9 +6,6 @@ import {navigate, useRoutes} from 'hookrouter';
 import AppProvider from './AppProvider.js';
 import {AppContext} from './AppProvider.js';
 
-import {Nav} from './Nav.js';
-import {Sidebar} from './Sidebar.js';
-
 const StyledApp = styled.div`
 color: #cccccc;
 	background: rgba(1,1,1,1);
@@ -24,7 +21,20 @@ color: #cccccc;
 	}
 `;
 
+import {Nav} from './Nav.js';
+import {Sidebar} from './Sidebar.js';
+
+import {Dashboard} from './Dashboard.js';
+import {Blogs} from './Blogs.js';
+
 function App() {
+  const routes = {
+    '/': () => <Dashboard/>,
+    '/blogs': () => <Blogs/>,
+  }
+  const routeResult = useRoutes(routes);
+  const handleRoute = (r) => { navigate(r); }
+
   return (
     <AppProvider>
       <AppContext.Consumer>
@@ -32,7 +42,7 @@ function App() {
           <StyledApp>
             <Nav />
             <div id="routed-component-container">
-
+              {routeResult}
             </div>
             <Sidebar />
           </StyledApp>
