@@ -73,17 +73,16 @@ body,
 		display: none;
 	}
 
-      /* Hide scrollbar for Chrome, Safari and Opera */
-    .board-debugger::-webkit-scrollbar {
-      display: none;
-    }
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .board-debugger::-webkit-scrollbar {
+  display: none;
+  }
 
-    /* Hide scrollbar for IE, Edge and Firefox */
-    .board-debugger {
-      -ms-overflow-style: none;  /* IE and Edge */
-      scrollbar-width: none;  /* Firefox */
-    }
-
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .board-debugger {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  }
 
 	.board-messages-container {
 		background-color: rgb(3, 26, 22);
