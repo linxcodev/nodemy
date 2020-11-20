@@ -25,6 +25,8 @@ scrollbar-width: none;  /* Firefox */
 `;
 
 import { useInputChange } from './useInputChange.js';
+import { BlogLoginForm } from './BlogLoginForm.js';
+import { BlogRegisterForm } from './BlogRegisterForm.js';
 
 export function Blogs() {
 	const [ jwt, setJwt ] = useState(null);
@@ -63,6 +65,8 @@ export function Blogs() {
 					<div  className={`debugger ${debug['users-debugger']}`}><ReactJson src={{ selectedUser, selectedUserRole, users }} collapsed={false} theme="apathy" /></div>
 				</div>
 				<div className="board-blocks-grid">
+					<BlogLoginForm  setLoginInput={setLoginInput} formData={loginInput} setMessages={setMessages} user={user} loading={loading} setLoading={setLoading} setUser={setUser} setJwt={setJwt} />
+					<BlogRegisterForm setRegisterInput={setRegisterInput} formData={registerInput} setMessages={setMessages}  user={user} loading={loading} setUser={setUser} setJwt={setJwt} />
 				</div>
 			</div>
 
